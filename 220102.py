@@ -24,5 +24,4 @@ hanoi(int(input()), 1, 3, 2)
 
 print(len(arr))
 for i in range(len(arr)):
-    # print(arr[i][0], arr[i][1])
     print(*arr[i])
