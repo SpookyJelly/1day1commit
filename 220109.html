@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <span>count: </span>
+      <span id="debounce">디바운스 체크</span>
+      <br />
+      <button type="button" onclick="debounceTest()">디바운스</button>
+    </div>
+    <div>
+      <span>count:</span>
+      <span id="throttle">쓰로틀링 체크</span>
+      <br />
+      <button type="button" onclick="throttlingTest()">쓰로틀링</button>
+    </div>
+    <button type="button" onclick="interval()">interval</button>
+    <button type="button" onclick="timeout()">timeout</button>
+  </body>
+  <script>
+    let debounceCount = 0;
+    let throttlingCount = 0;
+    let debounce, thorottling;
+
+    const debounceTest = () => {
+      if (debounce) {
+        clearTimeout(debounce);
+      }
+      debounce = setTimeout(() => {
+        debounceCount += 1;
+        document.querySelector("#debounce").innerText = debounceCount;
+      }, 1000);
+    };
+
+    const throttlingTest = () => {
+      if (!thorottling) {
+        thorottling = setTimeout(() => {
+          thorottling = null;
+          throttlingCount += 1;
+          document.querySelector("#throttle").innerText = throttlingCount;
+        }, 1000);
+      }
+    };
+
+    function interval() {
+      setInterval(() => {
+        console.log("fire");
+      }, 1000);
+    }
+    function timeout() {
+      setTimeout(() => {
+        console.log("black Fire");
+      }, 1000);
+    }
+  </script>
+</html>
