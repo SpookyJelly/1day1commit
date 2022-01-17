@@ -10,6 +10,12 @@
       "request": "launch",
       "program": "${file}",
       "console": "integratedTerminal"
+    },
+    {
+      "name":"Dart",
+      "request":"launch",
+      "type":"dart",
+      "console": "terminal"
     }
   ]
 }
